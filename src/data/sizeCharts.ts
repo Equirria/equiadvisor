@@ -18,9 +18,9 @@ export const BOOT_SIZES = [
 ] as const;
 
 export const CALF_TYPES = [
-  { max: 34, type: 'slim' as const, label: 'Wąska cholewka' },
+  { min: 0, max: 34, type: 'slim' as const, label: 'Wąska cholewka' },
   { min: 34, max: 38, type: 'regular' as const, label: 'Standardowa cholewka' },
-  { min: 38, type: 'wide' as const, label: 'Szeroka cholewka' },
+  { min: 38, max: 99, type: 'wide' as const, label: 'Szeroka cholewka' },
 ] as const;
 
 export const SADDLE_SIZES: Record<string, Record<string, string>> = {
@@ -40,7 +40,7 @@ export const VEST_SIZES = [
 ] as const;
 
 export const VEST_LENGTHS = [
-  { maxHeight: 160, length: 'Short', label: 'Krótka' },
+  { minHeight: 0, maxHeight: 160, length: 'Short', label: 'Krótka' },
   { minHeight: 160, maxHeight: 175, length: 'Regular', label: 'Standardowa' },
-  { minHeight: 175, length: 'Long', label: 'Długa' },
+  { minHeight: 175, maxHeight: 999, length: 'Long', label: 'Długa' },
 ] as const;

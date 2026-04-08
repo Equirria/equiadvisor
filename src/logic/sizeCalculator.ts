@@ -132,9 +132,7 @@ export function calculateVestSize(m: VestMeasurement): SizeResult {
 
   let lengthLabel = 'Standardowa';
   for (const entry of VEST_LENGTHS) {
-    const minOk = !entry.minHeight || m.height >= entry.minHeight;
-    const maxOk = !entry.maxHeight || m.height < entry.maxHeight;
-    if (minOk && maxOk) {
+    if (m.height >= entry.minHeight && m.height < entry.maxHeight) {
       lengthLabel = entry.label;
       break;
     }

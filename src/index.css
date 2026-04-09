@@ -3,16 +3,21 @@
 @theme {
   --color-navy: #14133B;
   --color-navy-light: #1e1d54;
+  --color-navy-dark: #0c0b28;
   --color-indigo: #2B287B;
-  --color-indigo-light: #3d39a3;
+  --color-indigo-light: #4a46c4;
+  --color-indigo-lighter: #6C63FF;
   --color-dark: #010016;
   --color-cream: #FAF7EE;
   --color-cream-dark: #F0EBD8;
-  --color-gray-light: #F3F3F8;
-  --color-gray-mid: #E5E5EA;
+  --color-gray-light: #F5F5FA;
+  --color-gray-mid: #E2E2EC;
+  --color-gray-text: #6B7094;
   --color-red: #A32D29;
   --color-red-light: #c43a35;
-  --color-green: #2D8B4E;
+  --color-green: #10B981;
+  --color-green-light: #D1FAE5;
+  --color-gold: #F59E0B;
   --font-family-sans: "Sen", Arial, sans-serif;
 }
 
@@ -29,3 +34,71 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Gradient backgrounds */
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #14133B 0%, #2B287B 50%, #4a46c4 100%);
+}
+
+.bg-hero-pattern {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(106, 99, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(74, 70, 196, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(106, 99, 255, 0.1) 0%, transparent 40%);
+}
+
+.bg-section-gradient {
+  background: linear-gradient(180deg, #F5F5FA 0%, #ffffff 100%);
+}
+
+.bg-card-shine {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+  backdrop-filter: blur(10px);
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth button hover */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(106, 99, 255, 0.4), 0 4px 12px rgba(20, 19, 59, 0.3);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #6C63FF, #2B287B, #6C63FF);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Star rating */
+.star-gold { color: #F59E0B; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F5F5FA; }
+::-webkit-scrollbar-thumb { background: #C8C8D8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2B287B; }
+
+/* Number input arrows removal */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] { -moz-appearance: textfield; }
